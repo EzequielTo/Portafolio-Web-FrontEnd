@@ -25,11 +25,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "portafolio-web/node_modules/bootstrap/dist/css/bootstrap.css"
+              "src/styles.css"
             ],
             "scripts": [
-              "portafolio-web/node_modules/bootstrap/dist/js/bootstrap.js"
             ]
           },
           "configurations": {
