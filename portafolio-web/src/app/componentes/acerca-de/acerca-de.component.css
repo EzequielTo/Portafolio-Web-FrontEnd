@@ -9,11 +9,11 @@ div{
 @media(min-width: 576px){
     #fotoDePerfil{
         position: absolute;
-        width: 15%;
+        width: 12%;
         border-radius: 100%;
         box-shadow: 3px 3px 3px grey;
         left: 3%;
-        top: 650px;
+        align-items: center;
     }
 }
 @media(max-width: 575px){
@@ -22,6 +22,7 @@ div{
         width: 30%;
         border-radius: 100%;
         box-shadow: 3px 3px 3px grey;
+        align-items: center;
     }
 }
 /*etiqueta nombre*/
