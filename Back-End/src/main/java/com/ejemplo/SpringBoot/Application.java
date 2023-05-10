@@ -1,13 +1,13 @@
-package com.portfolio.mgb;
+package com.ejemplo.SpringBoot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MgbApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MgbApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 }
