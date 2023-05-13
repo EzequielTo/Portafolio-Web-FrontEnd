@@ -6,13 +6,13 @@
 package com.ejemplo.SpringBoot.Security.Entity;
 
 import com.ejemplo.SpringBoot.Security.Enums.RolNombre;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.validation.constraints.NotNull;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.validation.constraints.NotNull;
+import org.springframework.data.annotation.Id;
 
 @Entity
 public class Rol {

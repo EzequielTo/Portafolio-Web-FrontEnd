@@ -16,13 +16,13 @@ import com.ejemplo.SpringBoot.Security.Service.UsuarioService;
 import com.ejemplo.SpringBoot.Security.jwt.JwtProvider;
 import java.util.HashSet;
 import java.util.Set;
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.neo4j.Neo4jProperties.Authentication;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -35,7 +35,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin(origins = {"https://mgbfrontend.web.app","http://localhost:4200"})
+@CrossOrigin(origins = {"http://localhost:4200","http://localhost:8080"})
 public class AuthController {
     @Autowired
     PasswordEncoder passwordEncoder;
@@ -72,7 +72,7 @@ public class AuthController {
         
         return new ResponseEntity(new Mensaje("Usuario guardado"),HttpStatus.CREATED);
     }
-    
+    /*
     @PostMapping("/login")
     public ResponseEntity<JwtDto> login(@Valid @RequestBody LoginUsuario loginUsuario, BindingResult bindingResult){
         if(bindingResult.hasErrors())
@@ -88,6 +88,38 @@ public class AuthController {
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
         
         JwtDto jwtDto = new JwtDto(jwt, userDetails.getUsername(), userDetails.getAuthorities());
+        
+        return new ResponseEntity(jwtDto, HttpStatus.OK);
+    }*/
+    
+    @PostMapping("/login")
+    public ResponseEntity<JwtDto> login(@Valid @RequestBody LoginUsuario loginUsuario, BindingResult bindingResult) {
+       if(bindingResult.hasErrors())
+           return new ResponseEntity(new Mensaje("Campos mal puestos"), HttpStatus.BAD_REQUEST);
+       
+       System.out.println("flag0");
+       
+       Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
+       loginUsuario.getNombreUsuario(), loginUsuario.getPassword()));
+       
+       System.out.println("flag1");
+       
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+        
+        System.out.println("flag2");
+
+        String jwt = jwtProvider.generateToken(authentication);
+        
+        System.out.println("flag3");
+        
+        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+        
+        System.out.println("flag4");
+        
+        JwtDto jwtDto = new JwtDto(jwt, userDetails.getUsername(), userDetails.getAuthorities());
+        
+        System.out.println("flag5");
+        
         
         return new ResponseEntity(jwtDto, HttpStatus.OK);
     }

@@ -8,7 +8,7 @@ package com.ejemplo.SpringBoot.Security.Service;
 import com.ejemplo.SpringBoot.Security.Entity.Usuario;
 import com.ejemplo.SpringBoot.Security.Repository.iUsuarioRepository;
 import java.util.Optional;
-import jakarta.transaction.Transactional;
+import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -7,10 +7,10 @@ package com.ejemplo.SpringBoot.Security.jwt;
 
 import com.ejemplo.SpringBoot.Security.Service.UserDetailsImpl;
 import java.io.IOException;
-import jakarta.servlet.FilterChain;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,11 +48,13 @@ public class JwtTokenFilter extends OncePerRequestFilter {
         }
         filterChain.doFilter(request, response);
     }
-    
-    private String getToken(HttpServletRequest request){
+
+    private String getToken(HttpServletRequest request) {
         String header = request.getHeader("Authorization");
-        if(header != null && header.startsWith("Bearer"))
-            return header.replace("Bearer", "");
+        if (header != null && header.trim().startsWith("Bearer ")) {
+            return header.trim().replace("Bearer ", "");
+        }
         return null;
     }
+
 }
