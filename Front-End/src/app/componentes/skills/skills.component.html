@@ -1,263 +1,41 @@
 <div class="row">
-    <h1>Hard Skills</h1>
+    <h1>Hard Skills</h1>    
+    <div class="col-lg-2">
+        <button type="button" routerLink="/newskill" *ngIf="isLogged">
+            Nueva Skill
+        </button>
+    </div>
 
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
+
+    <div class="text-center col-sm-4 col-md-4 col-lg-4 circulo" *ngFor="let skill of skill">
         <circle-progress
-    [title]="'Electrica'"
-    [percent]="66"
-    [titleColor]="'#D35400'"
-    [titleFontSize]="'2em'"
-    [showSubtitle]="false"
-    [radius]="100"
-    [showUnits]="false"
-    [outerStrokeWidth]="16"
-    [innerStrokeWidth]="5"
-    [outerStrokeColor]="'#D35400'"
-    [innerStrokeColor]="'#000000'"
-    [animation]="true"
-    [animationDuration]="500"
-    ></circle-progress>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-    [title]="'Electronica'"
-    [percent]="66"
-    [titleColor]="'#D35400'"
-    [titleFontSize]="'2em'"
-    [showSubtitle]="false"
-    [radius]="100"
-    [showUnits]="false"
-    [outerStrokeWidth]="16"
-    [innerStrokeWidth]="5"
-    [outerStrokeColor]="'#D35400'"
-    [innerStrokeColor]="'#000000'"
-    [animation]="true"
-    [animationDuration]="500"
-    ></circle-progress>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-    [title]="'Google Calc'"
-    [percent]="66"
-    [titleColor]="'#D35400'"
-    [titleFontSize]="'1.5em'"
-    [showSubtitle]="false"
-    [radius]="100"
-    [showUnits]="false"
-    [outerStrokeWidth]="16"
-    [innerStrokeWidth]="5"
-    [outerStrokeColor]="'#D35400'"
-    [innerStrokeColor]="'#000000'"
-    [animation]="true"
-    [animationDuration]="500"
-    ></circle-progress>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-    [title]="'Photoshop'"
-    [percent]="33"
-    [titleColor]="'#D35400'"
-    [titleFontSize]="'2em'"
-    [showSubtitle]="false"
-    [radius]="100"
-    [showUnits]="false"
-    [outerStrokeWidth]="16"
-    [innerStrokeWidth]="5"
-    [outerStrokeColor]="'#D35400'"
-    [innerStrokeColor]="'#000000'"
-    [animation]="true"
-    [animationDuration]="500"
-    ></circle-progress>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-    [title]="'Ingles'"
-    [percent]="60"
-    [titleColor]="'#D35400'"
-    [titleFontSize]="'2em'"
-    [subtitle]="'FCE'"
-    [subtitleFontSize]="'1.5em'"
-    [subtitleColor]="'#000000'"
-    [showSubtitle]="true"
-    [radius]="100"
-    [showUnits]="false"
-    [outerStrokeWidth]="16"
-    [innerStrokeWidth]="5"
-    [outerStrokeColor]="'#D35400'"
-    [innerStrokeColor]="'#000000'"
-    [animation]="true"
-    [animationDuration]="500"
-    ></circle-progress>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-    [title]="'AutoCAD'"
-    [percent]="33"
-    [titleColor]="'#D35400'"
-    [titleFontSize]="'2em'"
-    [showSubtitle]="false"
-    [radius]="100"
-    [showUnits]="false"
-    [outerStrokeWidth]="16"
-    [innerStrokeWidth]="5"
-    [outerStrokeColor]="'#D35400'"
-    [innerStrokeColor]="'#000000'"
-    [animation]="true"
-    [animationDuration]="500"
-    ></circle-progress>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-    [title]="'C++'"
-    [percent]="66"
-    [titleColor]="'#D35400'"
-    [titleFontSize]="'2em'"
-    [showSubtitle]="false"
-    [radius]="100"
-    [showUnits]="false"
-    [outerStrokeWidth]="16"
-    [innerStrokeWidth]="5"
-    [outerStrokeColor]="'#D35400'"
-    [innerStrokeColor]="'#000000'"
-    [animation]="true"
-    [animationDuration]="500"
-    ></circle-progress>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-    [title]="'python'"
-    [percent]="66"
-    [titleColor]="'#D35400'"
-    [titleFontSize]="'2em'"
-    [showSubtitle]="false"
-    [radius]="100"
-    [showUnits]="false"
-    [outerStrokeWidth]="16"
-    [innerStrokeWidth]="5"
-    [outerStrokeColor]="'#D35400'"
-    [innerStrokeColor]="'#000000'"
-    [animation]="true"
-    [animationDuration]="500"
-    ></circle-progress>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-    [title]="'javascript'"
-    [percent]="66"
-    [titleColor]="'#D35400'"
-    [titleFontSize]="'2em'"
-    [showSubtitle]="false"
-    [radius]="100"
-    [showUnits]="false"
-    [outerStrokeWidth]="16"
-    [innerStrokeWidth]="5"
-    [outerStrokeColor]="'#D35400'"
-    [innerStrokeColor]="'#000000'"
-    [animation]="true"
-    [animationDuration]="500"
-    ></circle-progress>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-    [title]="'Ruby'"
-    [percent]="66"
-    [titleColor]="'#D35400'"
-    [titleFontSize]="'2em'"
-    [showSubtitle]="false"
-    [radius]="100"
-    [showUnits]="false"
-    [outerStrokeWidth]="16"
-    [innerStrokeWidth]="5"
-    [outerStrokeColor]="'#D35400'"
-    [innerStrokeColor]="'#000000'"
-    [animation]="true"
-    [animationDuration]="500"
-    ></circle-progress>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-    [title]="'mplab'"
-    [percent]="33"
-    [titleColor]="'#D35400'"
-    [titleFontSize]="'2em'"
-    [showSubtitle]="false"
-    [radius]="100"
-    [showUnits]="false"
-    [outerStrokeWidth]="16"
-    [innerStrokeWidth]="5"
-    [outerStrokeColor]="'#D35400'"
-    [innerStrokeColor]="'#000000'"
-    [animation]="true"
-    [animationDuration]="500"
-    ></circle-progress>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-    [title]="'html'"
-    [percent]="33"
-    [titleColor]="'#D35400'"
-    [titleFontSize]="'2em'"
-    [showSubtitle]="false"
-    [radius]="100"
-    [showUnits]="false"
-    [outerStrokeWidth]="16"
-    [innerStrokeWidth]="5"
-    [outerStrokeColor]="'#D35400'"
-    [innerStrokeColor]="'#000000'"
-    [animation]="true"
-    [animationDuration]="500"
-    ></circle-progress>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-    [title]="'css'"
-    [percent]="33"
-    [titleColor]="'#D35400'"
-    [titleFontSize]="'2em'"
-    [showSubtitle]="false"
-    [radius]="100"
-    [showUnits]="false"
-    [outerStrokeWidth]="16"
-    [innerStrokeWidth]="5"
-    [outerStrokeColor]="'#D35400'"
-    [innerStrokeColor]="'#000000'"
-    [animation]="true"
-    [animationDuration]="500"
-    ></circle-progress>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-    [title]="'Typescript'"
-    [percent]="33"
-    [titleColor]="'#D35400'"
-    [titleFontSize]="'2em'"
-    [showSubtitle]="false"
-    [radius]="100"
-    [showUnits]="false"
-    [outerStrokeWidth]="16"
-    [innerStrokeWidth]="5"
-    [outerStrokeColor]="'#D35400'"
-    [innerStrokeColor]="'#000000'"
-    [animation]="true"
-    [animationDuration]="500"
-    ></circle-progress>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-    [title]="'Github'"
-    [percent]="70"
-    [titleColor]="'#D35400'"
-    [titleFontSize]="'2em'"
-    [showSubtitle]="false"
-    [radius]="100"
-    [showUnits]="false"
-    [outerStrokeWidth]="16"
-    [innerStrokeWidth]="5"
-    [outerStrokeColor]="'#D35400'"
-    [innerStrokeColor]="'#000000'"
-    [animation]="true"
-    [animationDuration]="500"
-    ></circle-progress>
+        [title]="(skill.nombre)"
+        [percent]="(skill.porcentaje)"
+        [titleColor]="'#D35400'"
+        [titleFontSize]="'2em'"
+        [showSubtitle]="false"
+        [radius]="100"
+        [showUnits]="false"
+        [outerStrokeWidth]="16"
+        [innerStrokeWidth]="5"
+        [outerStrokeColor]="'#D35400'"
+        [innerStrokeColor]="'#000000'"
+        [animation]="true"
+        [animationDuration]="500"
+        ></circle-progress>
+        <div>
+            <td *ngIf="isLogged">
+                <button class="btn btn-light" routerLink="/editskill/{{skill.id}}">
+                    <i class="bi bi-pencil"></i>Editar
+                </button>
+            </td>
+            <td *ngIf="isLogged">
+                <button class="btn btn-danger" (click)="delete(skill.id)">
+                    <i class="bi bi-trash"></i>Borrar
+                </button>
+            </td>
+        </div>
+        
     </div>
 
     <h1>Soft Skills</h1>

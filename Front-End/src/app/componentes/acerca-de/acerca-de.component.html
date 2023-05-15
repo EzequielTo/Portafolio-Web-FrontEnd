@@ -1,6 +1,9 @@
 <div class="row">
+        <button type="button" routerLink="/editacercade/1" *ngIf="isLogged">
+            Editar Persona 
+        </button>
     <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-        <img src="../../../assets/foto para cv.jpeg" class="img-fluid" id="fotoDePerfil">
+        <img src={{persona.img}} class="img-fluid" id="fotoDePerfil">
     </div>
     <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
         <p id="Nombre">
@@ -16,7 +19,7 @@
                 Acerca De Mi
             </h1>
             <p>
-                Soy un aspirante a programador buscando mi primer trabajo en informática. Soy dedicado, organizado y creativo. Me gusta trabajar en equipo y soy responsable. Estoy comprometido a aumentar mi experiencia y conocimiento.
+                {{persona.descripcion}}
             </p>
         </span>
     </div>

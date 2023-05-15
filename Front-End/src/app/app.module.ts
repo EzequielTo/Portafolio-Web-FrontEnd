@@ -16,6 +16,14 @@ import { FooterComponent } from './componentes/footer/footer.component';
 import {HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './componentes/home/home.component';
 import { LoginComponent } from './componentes/login/login.component';
+import { InterceptorProvider } from './servicio/interceptor-service';
+import { NewExperienciaComponent } from './componentes/experiencia/new-experiencia.component';
+import { EditExperienciaComponent } from './componentes/experiencia/edit-experiencia.component';
+import { NeweducacionComponent } from './componentes/educacion/neweducacion.component';
+import { EditeducacionComponent } from './componentes/educacion/editeducacion.component';
+import { EditSkillComponent } from './componentes/skills/edit-skill.component';
+import { NewSkillComponent } from './componentes/skills/new-skill.component';
+import { EditAcercaDeComponent } from './componentes/acerca-de/edit-acerca-de.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +38,14 @@ import { LoginComponent } from './componentes/login/login.component';
     ProyectosComponent,
     FooterComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    NewExperienciaComponent,
+    EditExperienciaComponent,
+    NeweducacionComponent,
+    EditeducacionComponent,
+    EditSkillComponent,
+    NewSkillComponent,
+    EditAcercaDeComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +54,9 @@ import { LoginComponent } from './componentes/login/login.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    InterceptorProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
