@@ -12,7 +12,7 @@ export class NeweducacionComponent implements OnInit {
   nombreE: string;
   descripcionE: string;
 
-  constructor(private educacuonService: EducacionService, private router: Router){}
+  constructor(private educacuonService: EducacionService, private router: Router) { }
 
   ngOnInit(): void {
     throw new Error('Method not implemented.');
@@ -22,13 +22,13 @@ export class NeweducacionComponent implements OnInit {
     const educacion = new Educacion(this.nombreE, this.descripcionE);
     this.educacuonService.save(educacion).subscribe({
       next: data => {
-      alert("Educacion Añadida");
-      this.router.navigate(['']);
-    }, error: err => {
-      alert("fallo");
-      this.router.navigate(['']);
-    }
-  });
+        alert("Educacion Añadida");
+        this.router.navigate(['']);
+      }, error: err => {
+        alert("fallo");
+        this.router.navigate(['']);
+      }
+    });
   }
 
 }

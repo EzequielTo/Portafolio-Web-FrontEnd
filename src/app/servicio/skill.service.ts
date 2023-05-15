@@ -5,30 +5,30 @@ import { environment } from 'environments/environment';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  
+
   providedIn: 'root'
 })
 export class SkillService {
   expURL = environment.URL + '/skill'
 
   constructor(private httpClient: HttpClient) { }
-  public lista(): Observable<Skill[]>{
-    return this.httpClient.get<Skill[]>(this.expURL+'/lista');
+  public lista(): Observable<Skill[]> {
+    return this.httpClient.get<Skill[]>(this.expURL + '/lista');
   }
 
-  public details(id: number): Observable<Skill>{
-    return this.httpClient.get<Skill>(this.expURL+`/detail/${id}`);
+  public detail(id: number): Observable<Skill> {
+    return this.httpClient.get<Skill>(this.expURL + `/detail/${id}`);
   }
 
-  public save(skill: Skill): Observable<any>{
-    return this.httpClient.post<any>(this.expURL+'/create', skill);
+  public save(skill: Skill): Observable<any> {
+    return this.httpClient.post<any>(this.expURL + '/create', skill);
   }
 
-  public update(id: number, skill: Skill): Observable<any>{
-    return this.httpClient.put<any>(this.expURL+`/update/${id}`, skill);
+  public update(id: number, skill: Skill): Observable<any> {
+    return this.httpClient.put<any>(this.expURL + `/update/${id}`, skill);
   }
 
-  public delete(id: number): Observable<any>{
-    return this.httpClient.delete(this.expURL+`/delete/${id}`);
+  public delete(id: number): Observable<any> {
+    return this.httpClient.delete(this.expURL + `/delete/${id}`);
   }
 }

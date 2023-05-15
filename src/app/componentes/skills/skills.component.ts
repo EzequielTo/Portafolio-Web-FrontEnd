@@ -8,13 +8,13 @@ import { TokenService } from 'app/servicio/token.service';
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.css']
 })
-export class SkillsComponent implements OnInit{
-  skill: Skill[]=[];
+export class SkillsComponent implements OnInit {
+  skill: Skill[] = [];
 
-  constructor(private skillService: SkillService, private tokenService: TokenService){  }
+  constructor(private skillService: SkillService, private tokenService: TokenService) { }
   isLogged = false;
 
-  
+
   ngOnInit(): void {
     this.cargarSkills();
     if (this.tokenService.getToken()) {
@@ -30,16 +30,16 @@ export class SkillsComponent implements OnInit{
     })
   }
 
-  delete(id: number){
-    if(id != undefined){
+  delete(id: number) {
+    if (id != undefined) {
       this.skillService.delete(id).subscribe({
         next: data => {
           this.cargarSkills();
-        },error: err => {
+        }, error: err => {
           alert("No Se Pudo Cargar La Skill");
+        }
       }
-    }      
-    );
+      );
     }
   }
 }

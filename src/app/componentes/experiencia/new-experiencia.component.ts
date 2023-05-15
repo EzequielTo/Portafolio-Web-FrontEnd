@@ -12,7 +12,7 @@ export class NewExperienciaComponent implements OnInit {
   nombreE: string = '';
   descripcionE: string = '';
 
-  constructor(private sExperiencia: SExperienciaService, private router: Router) {}
+  constructor(private sExperiencia: SExperienciaService, private router: Router) { }
 
   ngOnInit(): void {
     throw new Error('Method not implemented.');
@@ -22,12 +22,12 @@ export class NewExperienciaComponent implements OnInit {
     const expe = new Experiencia(this.nombreE, this.descripcionE);
     this.sExperiencia.save(expe).subscribe({
       next: data => {
-      alert("Experiencia created");
-      this.router.navigate(['']);
-    },error: err => {
-      alert("Error");
-      this.router.navigate(['']);
-    }
-  });
+        alert("Experiencia created");
+        this.router.navigate(['']);
+      }, error: err => {
+        alert("Error");
+        this.router.navigate(['']);
+      }
+    });
   }
 }

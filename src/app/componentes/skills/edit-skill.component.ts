@@ -11,26 +11,26 @@ import { SkillService } from 'app/servicio/skill.service';
 export class EditSkillComponent implements OnInit {
   skill: Skill = null;
 
-  constructor(private activatedRouter: ActivatedRoute, private skillService: SkillService, private router: Router) {}
+  constructor(private activatedRouter: ActivatedRoute, private skillService: SkillService, private router: Router) { }
 
   ngOnInit(): void {
     const id = this.activatedRouter.snapshot.params['id'];
-    this.skillService.details(id).subscribe(
+    this.skillService.detail(id).subscribe(
       data => {
         this.skill = data;
-      }, error =>{
+      }, error => {
         alert('Error al modificar');
         this.router.navigate(['']);
       }
     )
   }
 
-  onUpdate(){
+  onUpdate() {
     const id = this.activatedRouter.snapshot.params['id'];
     this.skillService.update(id, this.skill).subscribe({
       next: data => {
         this.router.navigate(['']);
-      },error: err =>{
+      }, error: err => {
         alert('Error al modificar la skill');
         this.router.navigate(['']);
       }

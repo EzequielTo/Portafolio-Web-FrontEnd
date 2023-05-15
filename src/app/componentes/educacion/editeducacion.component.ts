@@ -14,7 +14,7 @@ export class EditeducacionComponent implements OnInit {
     private educacionS: EducacionService,
     private activatedRouter: ActivatedRoute,
     private router: Router
-  ){}
+  ) { }
   ngOnInit(): void {
     const id = this.activatedRouter.snapshot.params['id'];
     this.educacionS.detail(id).subscribe({
@@ -24,18 +24,18 @@ export class EditeducacionComponent implements OnInit {
         alert("Error al modificar");
         this.router.navigate(['']);
       }
-  });
+    });
   }
   onUpdate(): void {
     const id = this.activatedRouter.snapshot.params['id'];
     this.educacionS.update(id, this.educacion).subscribe({
       next: data => {
         this.router.navigate(['']);
-      },error: err => {
+      }, error: err => {
         alert("Error al modificar la educacion");
         this.router.navigate(['']);
       }
-  });
+    });
   }
 
 }
