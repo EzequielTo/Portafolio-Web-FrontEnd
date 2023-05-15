@@ -20,14 +20,15 @@ export class NewSkillComponent implements OnInit {
 
   onCreate(): void {
     const skill = new Skill(this.nombre, this.porcentaje);
-    this.skills.save(skill).subscribe(data => {
+    this.skills.save(skill).subscribe({
+      next: data => {
       alert("Skill Creada Con Exito");
       this.router.navigate(['']);
-    }, err => {      
+    },error: err => {      
       alert("Fallo Al Crear La Skill");
       this.router.navigate(['']);
     }
-    )
-  };
+    });
+  }
 
 }

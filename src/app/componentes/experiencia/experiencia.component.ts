@@ -31,12 +31,12 @@ cargarExperiencia():void{
 
 delete(id?: number){
   if (id != undefined){
-    this.sExperiencia.delete(id).subscribe(
-      data => {this.cargarExperiencia();
-      }, err => {
+    this.sExperiencia.delete(id).subscribe({
+      next: data => {this.cargarExperiencia();
+      }, error: err => {
         alert("Error al borrar la experiencia");
     }
-    )
+  });
   }
 }
 

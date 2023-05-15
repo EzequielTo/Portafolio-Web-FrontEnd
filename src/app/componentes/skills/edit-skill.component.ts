@@ -27,14 +27,15 @@ export class EditSkillComponent implements OnInit {
 
   onUpdate(){
     const id = this.activatedRouter.snapshot.params['id'];
-    this.skillService.update(id, this.skill).subscribe(
-      data => {
+    this.skillService.update(id, this.skill).subscribe({
+      next: data => {
         this.router.navigate(['']);
-      }, error =>{
+      },error: err =>{
         alert('Error al modificar la skill');
         this.router.navigate(['']);
       }
-    )
+    }
+    );
   }
 }
 

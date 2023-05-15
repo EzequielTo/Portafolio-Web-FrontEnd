@@ -33,13 +33,13 @@ export class EducacionComponent {
 
   delete(id?: number){
     if (id !== undefined){
-      this.educacionS.delete(id).subscribe(
-        data => {
+      this.educacionS.delete(id).subscribe({
+        next: data => {
           this.cargarEducacion();
-        }, err => {
+        },error: err => {
           alert("Error al eliminar");
         }
-      )
+    });
     }
   }
 }
