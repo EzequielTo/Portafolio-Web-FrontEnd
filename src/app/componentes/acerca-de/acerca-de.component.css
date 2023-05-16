@@ -8,11 +8,14 @@ div{
 /*estilo foto de perfil*/
 @media(min-width: 576px){
     #fotoDePerfil{
-        position: absolute;
-        width: 12%;
         border-radius: 100%;
         box-shadow: 3px 3px 3px grey;
-        left: 3%;
+        align-items: center;
+    }
+
+    .descripcion{
+        display: flex;
+        justify-content: center;
         align-items: center;
     }
 }
